@@ -150,7 +150,7 @@ public class ResultWriter {
      */
     public void printResult(CKClassResult result) throws IOException {
         String classNameKey = result.getClassName();
-        Integer classOccurrencesCount = Runner.classOccurrences.getOrDefault(classNameKey, 0); // Fallback to 0 if the class name is not found
+        Integer classOccurrencesCount = CKClassResult.classOccurrences.getOrDefault(classNameKey, 0); // Fallback to 0 if the class name is not found
 
         this.classPrinter.printRecord(
                 result.getFile(),
@@ -220,7 +220,7 @@ public class ResultWriter {
             String cleanMethodName = method.getMethodName().split("/")[0];
 
             // Calculate occurrences count for the clean method name
-            Integer occurrences = Runner.methodOccurrences.getOrDefault(cleanMethodName, 0);
+            Integer occurrences = CKMethodResult.methodOccurrences.getOrDefault(cleanMethodName, 0);
 
             this.methodPrinter.printRecord(
                     result.getFile(), 

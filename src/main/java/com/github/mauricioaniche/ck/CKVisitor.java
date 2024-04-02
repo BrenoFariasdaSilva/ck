@@ -495,7 +495,7 @@ public class CKVisitor extends ASTVisitor {
 		}
 
 		// Safely update the occurrences count for the class being instantiated.
-		Runner.classOccurrences.put(className, Runner.classOccurrences.getOrDefault(className, 0) + 1);
+		CKClassResult.classOccurrences.put(className, CKClassResult.classOccurrences.getOrDefault(className, 0) + 1);
 
 		if(!classes.isEmpty()) {
 			classes.peek().classLevelMetrics.stream().map(metric -> (CKASTVisitor) metric).forEach(ast -> ast.visit(node));
@@ -786,8 +786,8 @@ public class CKVisitor extends ASTVisitor {
 	}
 
 	public boolean visit(MethodInvocation node) {
-		// Add the method name to the map of the Runner.methodOccurrences
-		Runner.methodOccurrences.put(node.getName().toString(), Runner.methodOccurrences.getOrDefault(node.getName().toString(), 0) + 1);
+		// Add the method name to the map of the CKMethodResult.methodOccurrences
+		CKMethodResult.methodOccurrences.put(node.getName().toString(), CKMethodResult.methodOccurrences.getOrDefault(node.getName().toString(), 0) + 1);
 
 		if(!classes.isEmpty()) {
 			classes.peek().classLevelMetrics.stream().map(metric -> (CKASTVisitor) metric).forEach(ast -> ast.visit(node));
