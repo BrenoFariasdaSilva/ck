@@ -3,6 +3,7 @@
 ![Build Status](https://img.shields.io/github/actions/workflow/status/BrenoFariasdaSilva/ck/test.yml)
 [![Code Coverage](https://codecov.io/github/mauricioaniche/ck/coverage.svg)](https://codecov.io/gh/mauricioaniche/ck)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.mauricioaniche/ck/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.mauricioaniche/ck)
+![Wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/ck.svg)
 
 CK calculates class-level and method-level code metrics in Java projects by means
 of static analysis (i.e. no need for compiled code). Currently, it contains
