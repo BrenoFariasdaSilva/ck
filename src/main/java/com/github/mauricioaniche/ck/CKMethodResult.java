@@ -41,6 +41,7 @@ public class CKMethodResult {
 	private int modifiers;
 	private int logStatementsQty;
 	private boolean hasJavadoc;
+	private String methodInvocations;
 
 	//All direct invocations of methods
 	private Set<String> methodInvocations;
@@ -379,6 +380,14 @@ public class CKMethodResult {
 	@Override
 	public int hashCode() {
 		return Objects.hash(methodName, startLine);
+	}
+
+	public int getMethodInvocationsCounter() {
+		return this.methodInvocations;
+	}
+
+	public void setMethodInvocationsCounter(int methodInvocations) {
+		this.methodInvocations = methodInvocations;
 	}
 
 }
