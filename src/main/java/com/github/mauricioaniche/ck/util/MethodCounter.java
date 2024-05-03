@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class MethodCounter {
 	public class MethodInformation {
 		private String parentName;
-		private Map<String, Integer> methodInvocations = new HashMap<>();
+		private LinkedHashMap<String, Integer> methodInvocations = new LinkedHashMap<>();
 
 		public MethodInformation(String parentName) {
 			this.parentName = parentName;
@@ -29,7 +29,7 @@ public class MethodCounter {
 		}
 
 		public String toFormattedString() {
-			return parentName + "[ " + formatMethods(sortMethods(methodInvocations)) + " ] ";
+			return parentName + "[ " + formatMethods(methodInvocations) + " ] ";
 		}
 
 		private Map<String, Integer> sortMethods(Map<String, Integer> methodInvocation) {

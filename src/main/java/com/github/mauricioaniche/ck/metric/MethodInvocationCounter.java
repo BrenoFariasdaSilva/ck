@@ -7,7 +7,7 @@ import org.eclipse.jdt.core.dom.*;
 import java.util.*;
 
 public class MethodInvocationCounter implements CKASTVisitor, ClassLevelMetric {
-    private Map<String, MethodCounter.MethodInformation> methodInvocations = new HashMap<>();
+    private Map<String, MethodCounter.MethodInformation> methodInvocations = new LinkedHashMap<>();
     private String currentMethod = null;
 
     @Override
